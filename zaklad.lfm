@@ -2,10 +2,10 @@ object Form1: TForm1
   Left = 456
   Height = 560
   Top = 81
-  Width = 809
+  Width = 820
   Caption = 'GSVM :: Projekt [Richard Rožár 2iai4]'
   ClientHeight = 540
-  ClientWidth = 809
+  ClientWidth = 820
   Menu = MainMenu1
   OnCreate = FormCreate
   LCLVersion = '0.9.31'
@@ -16,12 +16,12 @@ object Form1: TForm1
     Width = 600
   end
   object GroupBox1: TGroupBox
-    Left = 184
+    Left = 160
     Height = 133
     Top = 400
-    Width = 448
+    Width = 496
     ClientHeight = 115
-    ClientWidth = 444
+    ClientWidth = 492
     Enabled = False
     TabOrder = 0
     object Label6: TLabel
@@ -88,9 +88,9 @@ object Form1: TForm1
       TabOrder = 2
     end
     object CheckBox3: TCheckBox
-      Left = 326
+      Left = 374
       Height = 19
-      Top = 53
+      Top = 56
       Width = 84
       Caption = 'Flat shading'
       Checked = True
@@ -99,9 +99,9 @@ object Form1: TForm1
       TabOrder = 3
     end
     object CheckBox2: TCheckBox
-      Left = 326
+      Left = 374
       Height = 19
-      Top = 29
+      Top = 32
       Width = 113
       Caption = 'Back-face Culling'
       Checked = True
@@ -110,9 +110,9 @@ object Form1: TForm1
       TabOrder = 4
     end
     object CheckBox1: TCheckBox
-      Left = 326
+      Left = 374
       Height = 19
-      Top = 77
+      Top = 80
       Width = 49
       Caption = 'Wires'
       Checked = True
@@ -131,7 +131,7 @@ object Form1: TForm1
     object Button11: TButton
       Left = 134
       Height = 25
-      Top = 85
+      Top = 84
       Width = 25
       Caption = '-'
       OnClick = Button11Click
@@ -174,7 +174,7 @@ object Form1: TForm1
     object Button9: TButton
       Left = 222
       Height = 25
-      Top = 53
+      Top = 52
       Width = 75
       Caption = '90%'
       OnClick = Button9Click
@@ -192,7 +192,7 @@ object Form1: TForm1
     object Button7: TButton
       Left = 166
       Height = 25
-      Top = 85
+      Top = 84
       Width = 25
       Caption = '+'
       OnClick = Button7Click
@@ -201,7 +201,7 @@ object Form1: TForm1
     object Button6: TButton
       Left = 166
       Height = 25
-      Top = 53
+      Top = 52
       Width = 25
       Caption = '+'
       OnClick = Button6Click
@@ -242,6 +242,54 @@ object Form1: TForm1
       Caption = '+'
       OnClick = Button2Click
       TabOrder = 16
+    end
+    object Label7: TLabel
+      Left = 326
+      Height = 16
+      Top = -3
+      Width = 36
+      Caption = 'Svetlo:'
+      ParentColor = False
+    end
+    object Edit1: TEdit
+      Left = 326
+      Height = 23
+      Top = 23
+      Width = 30
+      Alignment = taCenter
+      OnEditingDone = Edit1EditingDone
+      TabOrder = 17
+      Text = '0'
+    end
+    object Edit2: TEdit
+      Left = 326
+      Height = 23
+      Top = 54
+      Width = 30
+      Alignment = taCenter
+      OnEditingDone = Edit2EditingDone
+      TabOrder = 18
+      Text = '0'
+    end
+    object Edit3: TEdit
+      Left = 326
+      Height = 23
+      Top = 86
+      Width = 30
+      Alignment = taCenter
+      OnEditingDone = Edit3EditingDone
+      TabOrder = 19
+      Text = '10'
+    end
+    object ColorButton1: TColorButton
+      Left = 222
+      Height = 25
+      Top = 84
+      Width = 75
+      BorderWidth = 2
+      ButtonColorSize = 16
+      ButtonColor = clWhite
+      OnColorChanged = ColorButton1ColorChanged
     end
   end
   object MainMenu1: TMainMenu

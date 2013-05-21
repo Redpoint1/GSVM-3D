@@ -29,6 +29,7 @@ type
 
   TVykreslovanie = class
     kamera, light: TMatrix;
+    farba : TColor;
     Body: array of TMatrix;
     Polynomy: array of array of integer;
     constructor Create;
@@ -55,13 +56,13 @@ implementation
 constructor TVykreslovanie.Create;
 begin
   kamera := TMatrix.Create(1, 4);
+  kamera.pole[0][2] := 1;
+  kamera.pole[0][3] := 1;
+  light := TMatrix.Create(1, 4);
+  light.pole[0][3] := 1;
   setlength(body, 0);
   setlength(polynomy, 0);
-  kamera.pole[0][2] := 1;
-  light := TMatrix.Create(1, 4);
-  light.pole[0][0] := 0;
-  light.pole[0][1] := 0;
-  light.pole[0][2] := 500;
+  farba := clWhite;
 end;
 
 procedure TVykreslovanie.vykresli1(Obr: TCanvas; trans, view: TMatrix; culling,
@@ -96,7 +97,7 @@ begin
         vertex[j].X := round(pom.pole[0][0]) + sirka;
         vertex[j].Y := -round(pom.pole[0][1]) + vyska;
       end;
-      Obr.Brush.Color := clGray;
+      Obr.Brush.Color := farba;
       skalar := dotproduct(normals[i], middlepoints[i]);
       if ((skalar > 0) and (shading)) then
       begin
@@ -107,7 +108,6 @@ begin
       end
       else if shading then
         Obr.Brush.Color := clBlack;
-      //Obr.Brush.Style := bsClear;
       if wires then
         Obr.Pen.Style := psSolid
       else
